@@ -7,145 +7,336 @@
 <title>JP Pets & Aquarium | Dindigul</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background: #f5fbff;
-    color: #222;
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    color:#17324d;
+    background:#f2fbff;
+    line-height:1.6;
 }
 
-header {
-    background: #075e54;
-    color: white;
-    padding: 15px 5%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+header{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:rgba(3,47,70,.95);
+    backdrop-filter:blur(10px);
+    padding:15px 6%;
+    box-shadow:0 3px 20px rgba(0,0,0,.2);
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
 }
 
-.logo {
-    font-size: 22px;
-    font-weight: bold;
+.logo{
+    color:white;
+    font-size:22px;
+    font-weight:bold;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 18px;
-    flex-wrap: wrap;
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:14px;
 }
 
-.hero {
-    padding: 80px 20px;
-    text-align: center;
-    background: linear-gradient(135deg, #dff9fb, #ffffff);
+nav a:hover{
+    color:#58e0ff;
 }
 
-.hero h1 {
-    font-size: 42px;
-    color: #075e54;
-    margin-bottom: 15px;
+/* HERO */
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:60px 20px;
+    color:white;
+    background:
+    radial-gradient(circle at 20% 30%,rgba(71,219,255,.35),transparent 25%),
+    radial-gradient(circle at 80% 70%,rgba(0,255,190,.25),transparent 25%),
+    linear-gradient(135deg,#022c43,#006b83,#00a6a6);
+    position:relative;
+    overflow:hidden;
 }
 
-.hero p {
-    font-size: 19px;
-    margin-bottom: 25px;
+.hero:before{
+    content:"🐠        🐟             🐠       🐡";
+    position:absolute;
+    top:15%;
+    left:-100%;
+    font-size:35px;
+    opacity:.35;
+    animation:fish 18s linear infinite;
 }
 
-.btn {
-    display: inline-block;
-    background: #25d366;
-    color: white;
-    padding: 13px 22px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 5px;
+@keyframes fish{
+    from{left:-100%}
+    to{left:110%}
 }
 
-section {
-    padding: 55px 7%;
+.hero-content{
+    max-width:800px;
+    position:relative;
+    z-index:2;
 }
 
-h2 {
-    text-align: center;
-    color: #075e54;
-    margin-bottom: 30px;
-    font-size: 30px;
+.badge{
+    display:inline-block;
+    padding:8px 18px;
+    border:1px solid rgba(255,255,255,.5);
+    border-radius:30px;
+    background:rgba(255,255,255,.1);
+    margin-bottom:20px;
 }
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+.hero h1{
+    font-size:52px;
+    margin-bottom:15px;
+    text-shadow:0 5px 20px rgba(0,0,0,.3);
 }
 
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+.hero h1 span{
+    color:#5ee8ff;
 }
 
-.card .emoji {
-    font-size: 55px;
-    margin-bottom: 12px;
+.hero p{
+    font-size:19px;
+    margin-bottom:25px;
 }
 
-.card h3 {
-    color: #075e54;
-    margin-bottom: 10px;
+.btn{
+    display:inline-block;
+    padding:14px 24px;
+    margin:6px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
 }
 
-.about {
-    background: #e9fdf8;
-    text-align: center;
+.whatsapp{
+    background:#25d366;
+    color:white;
 }
 
-.contact {
-    text-align: center;
+.whatsapp:hover{
+    transform:translateY(-4px);
 }
 
-footer {
-    background: #075e54;
-    color: white;
-    text-align: center;
-    padding: 20px;
+.explore{
+    background:white;
+    color:#006b83;
 }
 
-@media (max-width: 600px) {
-    .hero h1 {
-        font-size: 32px;
+.explore:hover{
+    transform:translateY(-4px);
+}
+
+/* SECTIONS */
+
+section{
+    padding:75px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    font-size:34px;
+    color:#034b67;
+}
+
+.section-title p{
+    color:#648092;
+}
+
+/* CATEGORY */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,.9);
+    border-radius:22px;
+    padding:30px 20px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,80,110,.12);
+    border:1px solid #d9f3fa;
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 40px rgba(0,100,130,.2);
+}
+
+.icon{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:#034b67;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#69818e;
+}
+
+/* FISH */
+
+.fish-section{
+    background:linear-gradient(180deg,#e5faff,#f7feff);
+}
+
+.fish-card{
+    position:relative;
+    overflow:hidden;
+}
+
+.fish-card:after{
+    content:"";
+    position:absolute;
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    border:1px solid rgba(0,170,200,.15);
+    top:-30px;
+    right:-30px;
+}
+
+.price{
+    margin:15px 0;
+    color:#008c9e;
+    font-weight:bold;
+}
+
+/* ABOUT */
+
+.about{
+    background:#033b52;
+    color:white;
+}
+
+.about .section-title h2{
+    color:white;
+}
+
+.about-box{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+}
+
+.about-box p{
+    color:#d5edf3;
+    font-size:17px;
+}
+
+/* CONTACT */
+
+.contact-box{
+    max-width:800px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 10px 35px rgba(0,70,100,.12);
+}
+
+.contact-item{
+    margin:18px 0;
+    font-size:17px;
+}
+
+/* FLOATING WHATSAPP */
+
+.floating{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#25d366;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    text-decoration:none;
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
+    z-index:1000;
+}
+
+/* FOOTER */
+
+footer{
+    background:#022c43;
+    color:#b9dce5;
+    text-align:center;
+    padding:25px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    nav{
+        flex-direction:column;
     }
 
-    nav {
-        gap: 12px;
+    nav ul{
+        gap:12px;
+        justify-content:center;
+        flex-wrap:wrap;
     }
 
-    nav ul {
-        gap: 10px;
-        font-size: 14px;
+    .hero{
+        min-height:82vh;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    section{
+        padding:55px 5%;
+    }
+
+    .section-title h2{
+        font-size:28px;
     }
 }
 </style>
@@ -168,81 +359,117 @@ footer {
 </nav>
 </header>
 
+<!-- HERO -->
+
 <section class="hero" id="home">
-<h1>JP Pets & Aquarium</h1>
+<div class="hero-content">
 
-<p>Your trusted pet shop in Dindigul 🐟🐶🐱</p>
+<div class="badge">🐠 Dindigul's Pet & Aquarium Store</div>
 
-<p>Live Fish • Aquarium Products • Dogs • Cats • Pet Accessories</p>
+<h1>Welcome to <span>JP Pets & Aquarium</span></h1>
 
-<a class="btn" href="https://wa.me/919360886437">
-Order on WhatsApp
+<p>
+Beautiful Fish • Happy Pets • Quality Products
+</p>
+
+<p>
+Everything your beloved pets need, all in one place.
+</p>
+
+<a class="btn whatsapp"
+href="https://wa.me/919360886437">
+💬 Order on WhatsApp
 </a>
+
+<a class="btn explore"
+href="#products">
+Explore Products ↓
+</a>
+
+</div>
 </section>
+
+<!-- PRODUCTS -->
 
 <section id="products">
-<h2>Our Products</h2>
+
+<div class="section-title">
+<h2>✨ What We Offer</h2>
+<p>Everything for your pets and aquarium</p>
+</div>
 
 <div class="cards">
 
 <div class="card">
-<div class="emoji">🐠</div>
-<h3>Fish & Aquarium</h3>
-<p>Beautiful aquarium fish and aquarium accessories.</p>
+<div class="icon">🐠</div>
+<h3>Aquarium Fish</h3>
+<p>Beautiful and colorful fish for your aquarium.</p>
 </div>
 
 <div class="card">
-<div class="emoji">🐶</div>
+<div class="icon">🏝️</div>
+<h3>Aquarium Products</h3>
+<p>Aquarium accessories and essential products.</p>
+</div>
+
+<div class="card">
+<div class="icon">🐶</div>
 <h3>Dogs</h3>
-<p>Dog-related products and pet care items.</p>
+<p>Products and accessories for your lovely dogs.</p>
 </div>
 
 <div class="card">
-<div class="emoji">🐱</div>
+<div class="icon">🐱</div>
 <h3>Cats</h3>
-<p>Cat food, accessories and pet care products.</p>
-</div>
-
-<div class="card">
-<div class="emoji">🛍️</div>
-<h3>Pet Accessories</h3>
-<p>Useful products and accessories for your pets.</p>
+<p>Useful products and accessories for cats.</p>
 </div>
 
 </div>
 </section>
 
-<section id="fish">
-<h2>Live Fish</h2>
+<!-- LIVE FISH -->
+
+<section class="fish-section" id="fish">
+
+<div class="section-title">
+<h2>🐠 Live Aquarium Fish</h2>
+<p>Bring life and color to your aquarium</p>
+</div>
 
 <div class="cards">
 
-<div class="card">
-<div class="emoji">🐟</div>
+<div class="card fish-card">
+<div class="icon">🐟</div>
 <h3>Guppy Fish</h3>
-<p>Colorful and beautiful guppy fish.</p>
+<p>Colorful and beautiful guppies.</p>
+<div class="price">Available • Ask Price</div>
 
-<a class="btn" href="https://wa.me/919360886437?text=Hi%20JP%20Pets%2C%20I%20am%20interested%20in%20Guppy%20Fish">
+<a class="btn whatsapp"
+href="https://wa.me/919360886437?text=Hi%20JP%20Pets%2C%20I%20am%20interested%20in%20Guppy%20Fish">
 Order Now
 </a>
 </div>
 
-<div class="card">
-<div class="emoji">🐠</div>
+<div class="card fish-card">
+<div class="icon">🐠</div>
 <h3>Goldfish</h3>
 <p>Beautiful goldfish for your aquarium.</p>
+<div class="price">Available • Ask Price</div>
 
-<a class="btn" href="https://wa.me/919360886437?text=Hi%20JP%20Pets%2C%20I%20am%20interested%20in%20Goldfish">
+<a class="btn whatsapp"
+href="https://wa.me/919360886437?text=Hi%20JP%20Pets%2C%20I%20am%20interested%20in%20Goldfish">
 Order Now
 </a>
 </div>
 
-<div class="card">
-<div class="emoji">🐡</div>
+<div class="card fish-card">
+<div class="icon">🐡</div>
 <h3>Molly Fish</h3>
-<p>Healthy and attractive molly fish.</p>
+<p>Attractive and colorful molly fish.</p>
+<div class="price">Available • Ask Price</div>
 
-<a class="btn" href="https://wa.me/919360886437?text=Hi%20JP%20Pets%2C%20I%20am%20interested%20in%20Molly%20Fish">
+<a class="btn whatsapp"
+href="https://wa.me/919360886437?text=Hi%20JP%20Pets%2C%20I%20am%20interested%20in%20Molly%20Fish">
 Order Now
 </a>
 </div>
@@ -250,27 +477,35 @@ Order Now
 </div>
 </section>
 
+<!-- DOGS CATS -->
+
 <section id="pets">
-<h2>Dogs & Cats</h2>
+
+<div class="section-title">
+<h2>🐶🐱 Dogs & Cats</h2>
+<p>Love, care and happiness for your furry friends</p>
+</div>
 
 <div class="cards">
 
 <div class="card">
-<div class="emoji">🐕</div>
-<h3>Dogs</h3>
-<p>Pet products and accessories for dogs.</p>
+<div class="icon">🐕</div>
+<h3>Dog Products</h3>
+<p>Accessories and useful products for dogs.</p>
 
-<a class="btn" href="https://wa.me/919360886437?text=Hi%20JP%20Pets%2C%20I%20am%20interested%20in%20Dog%20products">
+<a class="btn whatsapp"
+href="https://wa.me/919360886437?text=Hi%20JP%20Pets%2C%20I%20am%20interested%20in%20Dog%20products">
 Order Now
 </a>
 </div>
 
 <div class="card">
-<div class="emoji">🐈</div>
-<h3>Cats</h3>
-<p>Pet products and accessories for cats.</p>
+<div class="icon">🐈</div>
+<h3>Cat Products</h3>
+<p>Accessories and useful products for cats.</p>
 
-<a class="btn" href="https://wa.me/919360886437?text=Hi%20JP%20Pets%2C%20I%20am%20interested%20in%20Cat%20products">
+<a class="btn whatsapp"
+href="https://wa.me/919360886437?text=Hi%20JP%20Pets%2C%20I%20am%20interested%20in%20Cat%20products">
 Order Now
 </a>
 </div>
@@ -278,42 +513,75 @@ Order Now
 </div>
 </section>
 
+<!-- ABOUT -->
+
 <section class="about" id="about">
-<h2>About JP Pets & Aquarium</h2>
+
+<div class="section-title">
+<h2>💙 About JP Pets & Aquarium</h2>
+</div>
+
+<div class="about-box">
 
 <p>
-JP Pets & Aquarium is a pet shop located in VIP Nagar,
-near Government ITI, Dindigul.
+Welcome to JP Pets & Aquarium, your local pet and aquarium store in Dindigul.
 </p>
 
+<br>
+
 <p>
-We provide aquarium fish, pet products, accessories,
+We provide aquarium fish, aquarium products, pet accessories,
 and products for dogs and cats.
 </p>
+
+<br>
+
+<p>
+Our goal is simple — to help you give your pets a happy and healthy life. 🐾
+</p>
+
+</div>
 </section>
 
-<section class="contact" id="contact">
-<h2>Contact Us</h2>
+<!-- CONTACT -->
 
-<p><strong>📍 Address:</strong></p>
-<p>VIP Nagar, Government ITI,<br>
-Dindigul – 624003</p>
+<section id="contact">
 
-<br>
+<div class="section-title">
+<h2>📍 Visit Us</h2>
+<p>We would love to serve you!</p>
+</div>
 
-<p><strong>📱 WhatsApp:</strong> 9360886437</p>
+<div class="contact-box">
 
-<br>
+<div class="contact-item">
+📍 <strong>Address</strong><br>
+VIP Nagar, Government ITI,<br>
+Dindigul – 624003
+</div>
 
-<a class="btn" href="https://wa.me/919360886437">
-Chat on WhatsApp
+<div class="contact-item">
+📱 <strong>WhatsApp</strong><br>
+9360886437
+</div>
+
+<a class="btn whatsapp"
+href="https://wa.me/919360886437">
+💬 Chat With Us
 </a>
+
+</div>
 </section>
 
 <footer>
-<p>© 2026 JP Pets & Aquarium. All Rights Reserved.</p>
+<p>© 2026 JP Pets & Aquarium</p>
 <p>Dindigul, Tamil Nadu</p>
 </footer>
+
+<a class="floating"
+href="https://wa.me/919360886437">
+💬
+</a>
 
 </body>
 </html>
