@@ -61,7 +61,6 @@ nav{
     color:white;
     font-size:21px;
     font-weight:700;
-    letter-spacing:.3px;
 }
 
 .logo span{
@@ -166,14 +165,12 @@ nav a:hover{
 
 .btn-primary:hover{
     transform:translateY(-4px);
-    box-shadow:0 15px 35px rgba(22,199,193,.4);
 }
 
 .btn-light{
     border:1px solid rgba(255,255,255,.35);
     color:white;
     background:rgba(255,255,255,.08);
-    backdrop-filter:blur(10px);
 }
 
 .btn-light:hover{
@@ -181,7 +178,7 @@ nav a:hover{
     color:var(--navy);
 }
 
-/* FLOATING STATS */
+/* STATS */
 
 .stats{
     position:absolute;
@@ -249,171 +246,100 @@ section{
     color:var(--muted);
 }
 
-/* SERVICES */
+/* CATEGORY SECTIONS */
 
-.services{
+.category-section{
     background:var(--cream);
 }
 
-.service-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
+.category-section:nth-of-type(even){
+    background:#ffffff;
 }
 
-.service{
-    background:white;
-    border-radius:22px;
-    padding:32px 25px;
-    border:1px solid #e9eeee;
-    transition:.35s;
-}
-
-.service:hover{
-    transform:translateY(-8px);
-    box-shadow:0 20px 45px rgba(8,43,61,.1);
-}
-
-.service-icon{
-    width:55px;
-    height:55px;
-    border-radius:16px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:28px;
-    background:#e5fbfa;
-    margin-bottom:22px;
-}
-
-.service h3{
-    color:var(--navy);
-    margin-bottom:8px;
-}
-
-.service p{
-    color:var(--muted);
-    font-size:14px;
-}
-
-/* FISH */
-
-.fish{
-    background:white;
-}
-
-.fish-grid{
+.category-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:25px;
+    gap:22px;
 }
 
-.fish-card{
-    overflow:hidden;
-    background:#fff;
-    border-radius:25px;
-    border:1px solid #e5eeee;
-    box-shadow:0 10px 35px rgba(8,43,61,.07);
+.category-card{
+    background:white;
+    padding:32px 25px;
+    border-radius:24px;
+    border:1px solid #e6eeee;
+    box-shadow:0 10px 30px rgba(8,43,61,.06);
     transition:.35s;
 }
 
-.fish-card:hover{
+.category-card:hover{
     transform:translateY(-8px);
-    box-shadow:0 20px 50px rgba(8,43,61,.13);
+    box-shadow:0 20px 45px rgba(8,43,61,.12);
 }
 
-.fish-img{
-    height:245px;
-    background-size:cover;
-    background-position:center;
-}
-
-.guppy{
-    background-image:url("https://images.unsplash.com/photo-1520990269379-2f9c8f7c3f6e?auto=format&fit=crop&w=900&q=85");
-}
-
-.goldfish{
-    background-image:url("https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=900&q=85");
-}
-
-.aquarium{
-    background-image:url("https://images.unsplash.com/photo-1546026423-cc4642628d2b?auto=format&fit=crop&w=900&q=85");
-}
-
-.fish-content{
-    padding:25px;
-}
-
-.fish-content h3{
-    color:var(--navy);
-    font-size:21px;
-}
-
-.fish-content p{
-    color:var(--muted);
-    font-size:14px;
-    margin:7px 0 18px;
-}
-
-.availability{
-    display:inline-block;
-    color:#078d87;
-    background:#e7faf8;
-    padding:5px 12px;
-    border-radius:20px;
-    font-size:12px;
-    font-weight:700;
+.category-icon{
+    font-size:42px;
     margin-bottom:18px;
 }
 
-/* PETS */
-
-.pets{
-    background:#f3f8f9;
+.category-card h3{
+    color:var(--navy);
+    font-size:21px;
+    margin-bottom:8px;
 }
 
-.pet-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
+.category-card p{
+    color:var(--muted);
+    font-size:14px;
+    min-height:48px;
+    margin-bottom:20px;
 }
 
-.pet-card{
-    min-height:400px;
-    border-radius:28px;
-    overflow:hidden;
-    position:relative;
-    display:flex;
-    align-items:flex-end;
-    background-size:cover;
-    background-position:center;
+.order-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:11px 18px;
+    border-radius:30px;
+    background:var(--aqua);
+    color:#06232e;
+    text-decoration:none;
+    font-weight:700;
+    font-size:13px;
+    transition:.3s;
 }
 
-.dog{
-    background-image:
-    linear-gradient(0deg,rgba(4,25,35,.88),transparent 65%),
-    url("https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1100&q=85");
+.order-btn:hover{
+    transform:translateY(-3px);
 }
 
-.cat{
-    background-image:
-    linear-gradient(0deg,rgba(4,25,35,.88),transparent 65%),
-    url("https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1100&q=85");
+/* AQUARIUM */
+
+.aquarium{
+    background:linear-gradient(180deg,#e9fbfc,#ffffff);
 }
 
-.pet-content{
-    padding:30px;
-    color:white;
+.aquarium .category-card{
+    border-top:4px solid #16c7c1;
 }
 
-.pet-content h3{
-    font-family:"Playfair Display",serif;
-    font-size:31px;
+/* DOG */
+
+.dogs{
+    background:#f7f4ed;
 }
 
-.pet-content p{
-    color:#dcecef;
-    margin:5px 0 18px;
+.dogs .category-card{
+    border-top:4px solid #d49a55;
+}
+
+/* CAT */
+
+.cats{
+    background:#f5f3fa;
+}
+
+.cats .category-card{
+    border-top:4px solid #9c7ac7;
 }
 
 /* ABOUT */
@@ -555,12 +481,6 @@ footer strong{
     font-size:29px;
     box-shadow:0 8px 30px rgba(0,0,0,.25);
     z-index:2000;
-    animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-    0%,100%{transform:scale(1)}
-    50%{transform:scale(1.06)}
 }
 
 /* MOBILE */
@@ -571,20 +491,11 @@ footer strong{
         display:none;
     }
 
-    .hero{
-        padding-left:6%;
-        padding-right:6%;
-    }
-
     .stats{
         display:none;
     }
 
-    .service-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .fish-grid{
+    .category-grid{
         grid-template-columns:1fr 1fr;
     }
 
@@ -602,7 +513,6 @@ footer strong{
 
     .hero{
         min-height:100vh;
-        background-position:60% center;
     }
 
     .hero h1{
@@ -626,14 +536,8 @@ footer strong{
         font-size:35px;
     }
 
-    .service-grid,
-    .fish-grid,
-    .pet-grid{
+    .category-grid{
         grid-template-columns:1fr;
-    }
-
-    .pet-card{
-        min-height:360px;
     }
 
     .about-grid{
@@ -667,9 +571,9 @@ footer strong{
 
 <ul>
 <li><a href="#home">Home</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#fish">Fish</a></li>
-<li><a href="#pets">Pets</a></li>
+<li><a href="#aquarium">Aquarium</a></li>
+<li><a href="#dogs">Dogs</a></li>
+<li><a href="#cats">Cats</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
@@ -694,7 +598,7 @@ For Your <span>Pets.</span>
 </h1>
 
 <p>
-Premium aquarium fish, pet products and accessories
+Premium aquarium fish, pet products, food and accessories
 for the companions you love.
 </p>
 
@@ -706,8 +610,8 @@ href="https://wa.me/919360886437">
 </a>
 
 <a class="btn btn-light"
-href="#fish">
-Explore Collection →
+href="#aquarium">
+Explore Products →
 </a>
 
 </div>
@@ -718,17 +622,17 @@ Explore Collection →
 
 <div class="stat">
 <strong>🐠</strong>
-<span>Live Fish</span>
+<span>Aquarium</span>
 </div>
 
 <div class="stat">
 <strong>🐶</strong>
-<span>Pet Care</span>
+<span>Dogs</span>
 </div>
 
 <div class="stat">
-<strong>🐾</strong>
-<span>Quality</span>
+<strong>🐱</strong>
+<span>Cats</span>
 </div>
 
 </div>
@@ -736,121 +640,80 @@ Explore Collection →
 </section>
 
 
-<!-- SERVICES -->
+<!-- AQUARIUM -->
 
-<section class="services" id="services">
-
-<div class="container">
-
-<div class="section-head">
-<div class="eyebrow">What we offer</div>
-<h2>Everything your pet needs.</h2>
-<p>
-From beautiful aquarium fish to everyday pet essentials,
-we bring quality products together in one place.
-</p>
-</div>
-
-<div class="service-grid">
-
-<div class="service">
-<div class="service-icon">🐠</div>
-<h3>Aquarium Fish</h3>
-<p>Beautiful and colorful fish for your home aquarium.</p>
-</div>
-
-<div class="service">
-<div class="service-icon">🌊</div>
-<h3>Aquarium Care</h3>
-<p>Accessories and essential products for your aquarium.</p>
-</div>
-
-<div class="service">
-<div class="service-icon">🐶</div>
-<h3>Dog Products</h3>
-<p>Useful accessories and products for your dogs.</p>
-</div>
-
-<div class="service">
-<div class="service-icon">🐱</div>
-<h3>Cat Products</h3>
-<p>Comfortable and useful products for your cats.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- FISH -->
-
-<section class="fish" id="fish">
+<section class="category-section aquarium" id="aquarium">
 
 <div class="container">
 
 <div class="section-head">
-<div class="eyebrow">Aquarium collection</div>
-<h2>Bring your aquarium to life.</h2>
+
+<div class="eyebrow">Aquarium Collection</div>
+
+<h2>
+Everything for your aquarium.
+</h2>
+
 <p>
-Discover beautiful aquatic companions and create a
-peaceful underwater world at home.
+Explore live aquarium fishes, aquarium products
+and quality fish food.
 </p>
+
 </div>
 
-<div class="fish-grid">
 
-<div class="fish-card">
+<div class="category-grid">
 
-<div class="fish-img guppy"></div>
+<div class="category-card">
 
-<div class="fish-content">
-<span class="availability">AVAILABLE</span>
-<h3>Guppy Fish</h3>
-<p>Colorful, peaceful and perfect for home aquariums.</p>
+<div class="category-icon">🐠</div>
 
-<a class="btn btn-primary"
-href="https://wa.me/919360886437?text=Hi%20JP%20Pets%2C%20I%20am%20interested%20in%20Guppy%20Fish">
-Order Now
+<h3>Live Aquarium Fishes</h3>
+
+<p>
+Beautiful live aquarium fishes for your home aquarium.
+</p>
+
+<a class="order-btn"
+href="https://wa.me/919360886437?text=Hi%20JP%20Pets%2C%20I%20am%20interested%20in%20Live%20Aquarium%20Fishes">
+💬 Order / Enquire
 </a>
-</div>
 
 </div>
 
 
-<div class="fish-card">
+<div class="category-card">
 
-<div class="fish-img goldfish"></div>
+<div class="category-icon">🌊</div>
 
-<div class="fish-content">
-<span class="availability">AVAILABLE</span>
-<h3>Goldfish</h3>
-<p>A timeless aquarium favorite with beautiful colors.</p>
+<h3>Aquarium Products</h3>
 
-<a class="btn btn-primary"
-href="https://wa.me/919360886437?text=Hi%20JP%20Pets%2C%20I%20am%20interested%20in%20Goldfish">
-Order Now
+<p>
+Aquarium accessories and essential products for your tank.
+</p>
+
+<a class="order-btn"
+href="https://wa.me/919360886437?text=Hi%20JP%20Pets%2C%20I%20am%20interested%20in%20Aquarium%20Products">
+💬 Order / Enquire
 </a>
-</div>
 
 </div>
 
 
-<div class="fish-card">
+<div class="category-card">
 
-<div class="fish-img aquarium"></div>
+<div class="category-icon">🐟</div>
 
-<div class="fish-content">
-<span class="availability">ASK US</span>
-<h3>Aquarium Collection</h3>
-<p>Ask us about available fish and aquarium products.</p>
+<h3>Fish Food</h3>
 
-<a class="btn btn-primary"
-href="https://wa.me/919360886437?text=Hi%20JP%20Pets%2C%20I%20want%20to%20know%20about%20available%20fish">
-View Collection
+<p>
+Fish food and feeding essentials for healthy aquarium fish.
+</p>
+
+<a class="order-btn"
+href="https://wa.me/919360886437?text=Hi%20JP%20Pets%2C%20I%20am%20interested%20in%20Fish%20Food">
+💬 Order / Enquire
 </a>
-</div>
 
 </div>
 
@@ -861,49 +724,162 @@ View Collection
 </section>
 
 
-<!-- DOGS & CATS -->
+<!-- DOGS -->
 
-<section class="pets" id="pets">
+<section class="category-section dogs" id="dogs">
 
 <div class="container">
 
 <div class="section-head">
-<div class="eyebrow">For your furry friends</div>
-<h2>Love. Care. Happiness.</h2>
+
+<div class="eyebrow">Dog Collection</div>
+
+<h2>
+Everything for your dog.
+</h2>
+
 <p>
-Everything you need to make your dogs and cats
-feel comfortable and cared for.
+Find products, accessories and food for your loyal companion.
 </p>
+
 </div>
 
-<div class="pet-grid">
 
-<div class="pet-card dog">
+<div class="category-grid">
 
-<div class="pet-content">
-<h3>For Dogs 🐶</h3>
-<p>Accessories and useful products for your loyal companion.</p>
+<div class="category-card">
 
-<a class="btn btn-primary"
+<div class="category-icon">🐶</div>
+
+<h3>Dog</h3>
+
+<p>
+Products and essentials for your beloved dog.
+</p>
+
+<a class="order-btn"
 href="https://wa.me/919360886437?text=Hi%20JP%20Pets%2C%20I%20am%20interested%20in%20Dog%20products">
-Shop for Dogs →
+💬 Order / Enquire
 </a>
-</div>
 
 </div>
 
 
-<div class="pet-card cat">
+<div class="category-card">
 
-<div class="pet-content">
-<h3>For Cats 🐱</h3>
-<p>Comfortable and useful products for your lovely cat.</p>
+<div class="category-icon">🦴</div>
 
-<a class="btn btn-primary"
+<h3>Dog Accessories</h3>
+
+<p>
+Useful accessories and everyday essentials for dogs.
+</p>
+
+<a class="order-btn"
+href="https://wa.me/919360886437?text=Hi%20JP%20Pets%2C%20I%20am%20interested%20in%20Dog%20Accessories">
+💬 Order / Enquire
+</a>
+
+</div>
+
+
+<div class="category-card">
+
+<div class="category-icon">🥣</div>
+
+<h3>Dog Food</h3>
+
+<p>
+Food and feeding essentials for your dog's daily needs.
+</p>
+
+<a class="order-btn"
+href="https://wa.me/919360886437?text=Hi%20JP%20Pets%2C%20I%20am%20interested%20in%20Dog%20Food">
+💬 Order / Enquire
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CATS -->
+
+<section class="category-section cats" id="cats">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="eyebrow">Cat Collection</div>
+
+<h2>
+Everything for your cat.
+</h2>
+
+<p>
+Comfort, care and everyday essentials for your lovely cat.
+</p>
+
+</div>
+
+
+<div class="category-grid">
+
+<div class="category-card">
+
+<div class="category-icon">🐱</div>
+
+<h3>Cat</h3>
+
+<p>
+Products and essentials for your lovely cat.
+</p>
+
+<a class="order-btn"
 href="https://wa.me/919360886437?text=Hi%20JP%20Pets%2C%20I%20am%20interested%20in%20Cat%20products">
-Shop for Cats →
+💬 Order / Enquire
 </a>
+
 </div>
+
+
+<div class="category-card">
+
+<div class="category-icon">🐾</div>
+
+<h3>Cat Accessories</h3>
+
+<p>
+Useful accessories and everyday essentials for cats.
+</p>
+
+<a class="order-btn"
+href="https://wa.me/919360886437?text=Hi%20JP%20Pets%2C%20I%20am%20interested%20in%20Cat%20Accessories">
+💬 Order / Enquire
+</a>
+
+</div>
+
+
+<div class="category-card">
+
+<div class="category-icon">🥣</div>
+
+<h3>Cat Food</h3>
+
+<p>
+Food and feeding essentials for your cat's daily needs.
+</p>
+
+<a class="order-btn"
+href="https://wa.me/919360886437?text=Hi%20JP%20Pets%2C%20I%20am%20interested%20in%20Cat%20Food">
+💬 Order / Enquire
+</a>
 
 </div>
 
@@ -925,12 +901,19 @@ Shop for Cats →
 <div>
 
 <div class="section-head">
+
 <div class="eyebrow">About JP Pets</div>
-<h2>Your local pet store in Dindigul.</h2>
+
+<h2>
+Your local pet store in Dindigul.
+</h2>
+
 <p>
 JP Pets & Aquarium is dedicated to helping pet lovers
-find quality aquarium fish, pet products and accessories.
+find quality aquarium fish, pet food, accessories
+and everyday pet essentials.
 </p>
+
 </div>
 
 <div class="about-text">
@@ -946,22 +929,22 @@ together under one roof.
 
 <div class="highlight">
 <strong>🐠 Aquarium</strong>
-<span>Beautiful fish & aquarium essentials</span>
+<span>Live fish & aquarium products</span>
+</div>
+
+<div class="highlight">
+<strong>🍚 Fish Food</strong>
+<span>Food for your aquarium fish</span>
 </div>
 
 <div class="highlight">
 <strong>🐶 Dogs</strong>
-<span>Products for your furry friends</span>
+<span>Food & accessories for dogs</span>
 </div>
 
 <div class="highlight">
 <strong>🐱 Cats</strong>
-<span>Useful cat accessories</span>
-</div>
-
-<div class="highlight">
-<strong>💬 WhatsApp</strong>
-<span>Easy ordering & enquiries</span>
+<span>Food & accessories for cats</span>
 </div>
 
 </div>
@@ -983,13 +966,16 @@ together under one roof.
 
 <div>
 
-<div class="eyebrow">Come visit us</div>
+<div class="eyebrow">Come Visit Us</div>
 
-<h2>Let's talk about your pets.</h2>
+<h2>
+Let's talk about your pets.
+</h2>
 
 <p>
 Have a question about fish, aquarium products,
-dogs or cats? Message us directly on WhatsApp.
+dog products or cat products?
+Message us directly on WhatsApp.
 </p>
 
 <br>
@@ -1005,27 +991,41 @@ href="https://wa.me/919360886437">
 <div class="contact-details">
 
 <div class="detail">
+
 <div class="detail-icon">📍</div>
+
 <div>
 <strong>Our Store</strong>
-<span>VIP Nagar, Government ITI,<br>Dindigul – 624003</span>
-</div>
+<span>
+VIP Nagar, Government ITI,<br>
+Dindigul – 624003
+</span>
 </div>
 
+</div>
+
+
 <div class="detail">
+
 <div class="detail-icon">📱</div>
+
 <div>
 <strong>WhatsApp</strong>
 <span>9360886437</span>
 </div>
+
 </div>
 
+
 <div class="detail">
+
 <div class="detail-icon">🐾</div>
+
 <div>
 <strong>JP Pets & Aquarium</strong>
 <span>Dindigul, Tamil Nadu</span>
 </div>
+
 </div>
 
 </div>
