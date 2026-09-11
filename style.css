@@ -184,7 +184,3 @@ section {
     grid-template-columns: 1fr;
   }
 }
-.fish-grid,
-.fish-card {
-  display: block !important;
-}
