@@ -3,83 +3,461 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JP Pets &amp; Aquarium</title>
-  <link rel="stylesheet" href="style.css">
+  <title>🐾 JP Pets & Aquarium | Premium Live Aquarium & Pets Store</title>
+  
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-ocean: #0077b6;
+      --accent-cyan: #00b4d8;
+      --glow-teal: #48cae4;
+      --dark-navy: #03045e;
+      --luxury-black: #050c17;
+      --pure-white: #ffffff;
+      --light-bg: #f4f8fb;
+      --card-bg: #ffffff;
+      --border-color: #e2eaf0;
+      --whatsapp-green: #25d366;
+      --whatsapp-dark: #128c7e;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 14px 35px rgba(0, 119, 182, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-main);
+      line-height: 1.65;
+    }
+
+    /* Top Strip (Onyx Aqua Farm Style) */
+    .top-header {
+      background: var(--luxury-black);
+      color: #94a3b8;
+      font-size: 0.82rem;
+      padding: 0.55rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .top-header a {
+      color: var(--glow-teal);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Main Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1.1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .brand-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--dark-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      gap: 0.6rem;
+      overflow-x: auto;
+      padding: 0.4rem 0;
+    }
+
+    nav::-webkit-scrollbar {
+      height: 4px;
+    }
+    nav::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+
+    nav a {
+      color: #475569;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      white-space: nowrap;
+      padding: 0.5rem 0.95rem;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary-ocean);
+      background: #e0f2fe;
+    }
+
+    /* Luxury Hero Banner */
+    section#home {
+      background: radial-gradient(circle at 80% 20%, #0077b6 0%, #03045e 60%, #020617 100%);
+      color: var(--pure-white);
+      padding: 6.5rem 1.5rem 5.5rem 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    section#home p:first-child {
+      display: inline-block;
+      letter-spacing: 3px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--glow-teal);
+      background: rgba(72, 202, 228, 0.12);
+      border: 1px solid rgba(72, 202, 228, 0.3);
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    section#home h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.4rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.4rem;
+      background: linear-gradient(180deg, #ffffff 40%, #caf0f8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    section#home p {
+      color: #cbd5e1;
+      max-width: 680px;
+      margin: 0 auto 2.4rem auto;
+      font-size: 1.15rem;
+      font-weight: 300;
+    }
+
+    /* Action Buttons */
+    .hero-btn-container a {
+      display: inline-block;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.95rem 2.2rem;
+      border-radius: 50px;
+      margin: 0.5rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hero-btn-container a[href^="https://wa.me"] {
+      background: linear-gradient(135deg, var(--whatsapp-green), var(--whatsapp-dark));
+      color: var(--pure-white);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+    }
+
+    .hero-btn-container a[href^="https://wa.me"]:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px rgba(37, 211, 102, 0.5);
+    }
+
+    .hero-btn-container a[href^="#live-fishes"] {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: var(--pure-white);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-btn-container a[href^="#live-fishes"]:hover {
+      background: var(--pure-white);
+      color: var(--dark-navy);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(255, 255, 255, 0.25);
+    }
+
+    /* Section Global Styles */
+    section {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem;
+      text-align: center;
+    }
+
+    section:not(#home) {
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    section p:first-child {
+      color: var(--primary-ocean);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 0.6rem;
+    }
+
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 0.9rem;
+    }
+
+    section p {
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 1.8rem auto;
+      font-size: 1.05rem;
+    }
+
+    /* Onyx Aqua Style Luxury Product Grid */
+    section > div:not(.hero-btn-container):not(.contact-card-box) {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3.5rem;
+      text-align: left;
+    }
+
+    /* Luxury Store Cards */
+    section > div > div {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.35s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    section > div > div:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent-cyan);
+    }
+
+    section > div > div img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      background: #f1f5f9;
+      border-bottom: 1px solid #f1f5f9;
+      transition: transform 0.5s ease;
+    }
+
+    section > div > div:hover img {
+      transform: scale(1.05);
+    }
+
+    section > div > div > div {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    section > div > div h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 0.2rem;
+    }
+
+    /* Order & Enquiry Premium Buttons */
+    section > div > div a {
+      display: block;
+      text-decoration: none;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      padding: 0.75rem 0;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+      text-transform: uppercase;
+    }
+
+    section > div > div a[href*="order"] {
+      background: linear-gradient(135deg, var(--primary-ocean), var(--accent-cyan));
+      color: var(--pure-white);
+      box-shadow: 0 4px 14px rgba(0, 119, 182, 0.25);
+    }
+
+    section > div > div a[href*="order"]:hover {
+      filter: brightness(1.1);
+      box-shadow: 0 6px 18px rgba(0, 119, 182, 0.4);
+    }
+
+    section > div > div a[href*="enquire"] {
+      background: #f8fafc;
+      color: #475569;
+      border: 1px solid var(--border-color);
+    }
+
+    section > div > div a[href*="enquire"]:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    /* Contact Card */
+    .contact-card-box {
+      background: var(--pure-white);
+      border: 1px solid var(--border-color);
+      padding: 3rem 2rem;
+      border-radius: 20px;
+      max-width: 650px;
+      margin: 2rem auto 0 auto;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-card-box a {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--whatsapp-green), var(--whatsapp-dark));
+      color: var(--pure-white);
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 1rem;
+      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .contact-card-box a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--luxury-black);
+      color: #94a3b8;
+      padding: 3rem 1.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .top-header {
+        flex-direction: column;
+        gap: 0.3rem;
+        text-align: center;
+      }
+      .nav-container {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      section#home h1 {
+        font-size: 2.4rem;
+      }
+      section h2 {
+        font-size: 1.8rem;
+      }
+      section {
+        padding: 4rem 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <div>🐾 JP Pets &amp; Aquarium</div>
+<div class="top-header">
+  <span>📍 VIP Nagar, Government ITI, Dindigul - 624003</span>
+  <span>Direct WhatsApp: <a href="https://wa.me/919360886437">📱 9360886437</a></span>
+</div>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#live-fishes">Live Aquarium Fishes</a>
-    <a href="#aquarium-accessories">Aquarium Accessories</a>
-    <a href="#dogs">Dogs</a>
-    <a href="#dog-accessories">Dog Accessories</a>
-    <a href="#cats">Cats</a>
-    <a href="#cat-accessories">Cat Accessories</a>
-    <a href="#aquarium-plants">Aquarium Plants</a>
-    <a href="#aquarium-tanks">Aquarium Tanks</a>
-    <a href="#aquarium-woods">Aquarium Woods</a>
-  </nav>
+<header>
+  <div class="nav-container">
+    <div class="brand-logo">🐾 JP Pets &amp; Aquarium</div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#live-fishes">Live Aquarium Fishes</a>
+      <a href="#aquarium-accessories">Aquarium Accessories</a>
+      <a href="#dogs">Dogs</a>
+      <a href="#dog-accessories">Dog Accessories</a>
+      <a href="#cats">Cats</a>
+      <a href="#cat-accessories">Cat Accessories</a>
+      <a href="#aquarium-plants">Aquarium Plants</a>
+      <a href="#aquarium-tanks">Aquarium Tanks</a>
+      <a href="#aquarium-woods">Aquarium Woods</a>
+    </nav>
+  </div>
 </header>
 
 <section id="home">
-
   <div>
-
     <p>WELCOME TO JP PETS &amp; AQUARIUM</p>
-
     <h1>Bring the Beauty<br>of Nature Home</h1>
-
     <p>
       Premium aquarium fishes, pets and accessories
       for your home and aquarium.
     </p>
-
-    <div>
+    <div class="hero-btn-container">
       <a href="https://wa.me/919360886437?text=Hello%20JP%20Pets%20%26%20Aquarium!%20I%20would%20like%20to%20know%20more." target="_blank">
         WhatsApp Us
       </a>
-
       <a href="#live-fishes">
         Explore Collection
       </a>
     </div>
-
   </div>
-
 </section>
 
 <section>
-
   <p>JP PETS &amp; AQUARIUM</p>
-
   <h2>Your Aquarium.<br>Your Little World.</h2>
-
   <p>
     Discover beautiful aquarium fishes, accessories,
     plants, tanks, woods and pet essentials — all in one place.
   </p>
-
 </section>
 
-
 <section id="live-fishes">
-
-  <p>AQUARIUM</p>
-
+  <p>AQUARIUM COLLECTION</p>
   <h2>🐠 Live Aquarium Fishes</h2>
-
   <p>
     Explore our collection of beautiful live aquarium fishes.
   </p>
 
   <div>
-
+    <!-- 1. Betta -->
     <div>
-      <img alt="Betta Fish" src="IMG_20260911_193224.jpg">
+      <img alt="Betta Fish" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Betta_splendens_male.jpg/640px-Betta_splendens_male.jpg">
       <div>
         <h3>Betta</h3>
         <a href="https://wa.me/919360886437?text=Hello%20JP%20Pets!%20I%20would%20like%20to%20order%20Betta%20Fish." target="_blank">ORDER</a>
@@ -87,8 +465,9 @@
       </div>
     </div>
 
+    <!-- 2. Guppy -->
     <div>
-      <img alt="Guppy Fish" src="https://loremflickr.com/600/400/guppy,fish">
+      <img alt="Guppy Fish" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Guppy_01.jpg/640px-Guppy_01.jpg">
       <div>
         <h3>Guppy</h3>
         <a href="https://wa.me/919360886437?text=Hello%20JP%20Pets!%20I%20would%20like%20to%20order%20Guppy%20Fish." target="_blank">ORDER</a>
@@ -96,8 +475,9 @@
       </div>
     </div>
 
+    <!-- 3. Molly -->
     <div>
-      <img alt="Molly Fish" src="https://loremflickr.com/600/400/molly,fish">
+      <img alt="Molly Fish" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Poecilia_sphenops_black_molly.jpg/640px-Poecilia_sphenops_black_molly.jpg">
       <div>
         <h3>Molly</h3>
         <a href="https://wa.me/919360886437?text=Hello%20JP%20Pets!%20I%20would%20like%20to%20order%20Molly%20Fish." target="_blank">ORDER</a>
@@ -105,8 +485,9 @@
       </div>
     </div>
 
+    <!-- 4. Goldfish -->
     <div>
-      <img alt="Goldfish" src="https://loremflickr.com/600/400/goldfish">
+      <img alt="Goldfish" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Common_goldfish.JPG/640px-Common_goldfish.JPG">
       <div>
         <h3>Goldfish</h3>
         <a href="https://wa.me/919360886437?text=Hello%20JP%20Pets!%20I%20would%20like%20to%20order%20Goldfish." target="_blank">ORDER</a>
@@ -114,8 +495,9 @@
       </div>
     </div>
 
+    <!-- 5. Arowana -->
     <div>
-      <img alt="Arowana" src="https://loremflickr.com/600/400/arowana,fish">
+      <img alt="Arowana" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Super_Red_Arowana.jpg/640px-Super_Red_Arowana.jpg">
       <div>
         <h3>Arowana</h3>
         <a href="https://wa.me/919360886437?text=Hello%20JP%20Pets!%20I%20would%20like%20to%20order%20Arowana." target="_blank">ORDER</a>
@@ -123,8 +505,9 @@
       </div>
     </div>
 
+    <!-- 6. Flowerhorn -->
     <div>
-      <img alt="Flowerhorn" src="https://loremflickr.com/600/400/flowerhorn,fish">
+      <img alt="Flowerhorn" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Flowerhorn_cichlid_Kamfa.jpg/640px-Flowerhorn_cichlid_Kamfa.jpg">
       <div>
         <h3>Flowerhorn</h3>
         <a href="https://wa.me/919360886437?text=Hello%20JP%20Pets!%20I%20would%20like%20to%20order%20Flowerhorn." target="_blank">ORDER</a>
@@ -132,8 +515,9 @@
       </div>
     </div>
 
+    <!-- 7. Shark -->
     <div>
-      <img alt="Shark Fish" src="https://loremflickr.com/600/400/shark,fish">
+      <img alt="Shark Fish" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Balantiocheilos_melanopterus2.jpg/640px-Balantiocheilos_melanopterus2.jpg">
       <div>
         <h3>Shark</h3>
         <a href="https://wa.me/919360886437?text=Hello%20JP%20Pets!%20I%20would%20like%20to%20order%20Shark%20Fish." target="_blank">ORDER</a>
@@ -141,8 +525,9 @@
       </div>
     </div>
 
+    <!-- 8. Tetra -->
     <div>
-      <img alt="Tetra Fish" src="https://loremflickr.com/600/400/tetra,fish">
+      <img alt="Tetra Fish" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Paracheirodon_innesi_1.jpg/640px-Paracheirodon_innesi_1.jpg">
       <div>
         <h3>Tetra</h3>
         <a href="https://wa.me/919360886437?text=Hello%20JP%20Pets!%20I%20would%20like%20to%20order%20Tetra%20Fish." target="_blank">ORDER</a>
@@ -150,8 +535,9 @@
       </div>
     </div>
 
+    <!-- 9. Platy -->
     <div>
-      <img alt="Platy Fish" src="https://loremflickr.com/600/400/platy,fish">
+      <img alt="Platy Fish" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Platy_Xiphophorus_maculatus.jpg/640px-Platy_Xiphophorus_maculatus.jpg">
       <div>
         <h3>Platy</h3>
         <a href="https://wa.me/919360886437?text=Hello%20JP%20Pets!%20I%20would%20like%20to%20order%20Platy%20Fish." target="_blank">ORDER</a>
@@ -159,8 +545,9 @@
       </div>
     </div>
 
+    <!-- 10. Angel -->
     <div>
-      <img alt="Angel Fish" src="https://loremflickr.com/600/400/angelfish">
+      <img alt="Angel Fish" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Pterophyllum_scalare_male.jpg/640px-Pterophyllum_scalare_male.jpg">
       <div>
         <h3>Angel</h3>
         <a href="https://wa.me/919360886437?text=Hello%20JP%20Pets!%20I%20would%20like%20to%20order%20Angel%20Fish." target="_blank">ORDER</a>
@@ -168,8 +555,9 @@
       </div>
     </div>
 
+    <!-- 11. Oscar -->
     <div>
-      <img alt="Oscar Fish" src="https://loremflickr.com/600/400/oscar,fish">
+      <img alt="Oscar Fish" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Astronotus_ocellatus.jpg/640px-Astronotus_ocellatus.jpg">
       <div>
         <h3>Oscar</h3>
         <a href="https://wa.me/919360886437?text=Hello%20JP%20Pets!%20I%20would%20like%20to%20order%20Oscar%20Fish." target="_blank">ORDER</a>
@@ -177,8 +565,9 @@
       </div>
     </div>
 
+    <!-- 12. Gourami -->
     <div>
-      <img alt="Gourami Fish" src="https://loremflickr.com/600/400/gourami,fish">
+      <img alt="Gourami Fish" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Trichogaster_lalius_male.jpg/640px-Trichogaster_lalius_male.jpg">
       <div>
         <h3>Gourami</h3>
         <a href="https://wa.me/919360886437?text=Hello%20JP%20Pets!%20I%20would%20like%20to%20order%20Gourami%20Fish." target="_blank">ORDER</a>
@@ -186,8 +575,9 @@
       </div>
     </div>
 
+    <!-- 13. Cichlid -->
     <div>
-      <img alt="Cichlid Fish" src="https://loremflickr.com/600/400/cichlid,fish">
+      <img alt="Cichlid Fish" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Labidochromis_caeruleus_yellow.jpg/640px-Labidochromis_caeruleus_yellow.jpg">
       <div>
         <h3>Cichlid</h3>
         <a href="https://wa.me/919360886437?text=Hello%20JP%20Pets!%20I%20would%20like%20to%20order%20Cichlid%20Fish." target="_blank">ORDER</a>
@@ -195,8 +585,9 @@
       </div>
     </div>
 
+    <!-- 14. Rainbow Shark -->
     <div>
-      <img alt="Rainbow Shark" src="https://loremflickr.com/600/400/rainbow,shark,fish">
+      <img alt="Rainbow Shark" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Epalzeorhynchos_frenatum.jpg/640px-Epalzeorhynchos_frenatum.jpg">
       <div>
         <h3>Rainbow Shark</h3>
         <a href="https://wa.me/919360886437?text=Hello%20JP%20Pets!%20I%20would%20like%20to%20order%20Rainbow%20Shark." target="_blank">ORDER</a>
@@ -204,8 +595,9 @@
       </div>
     </div>
 
+    <!-- 15. Arapaima -->
     <div>
-      <img alt="Arapaima" src="https://loremflickr.com/600/400/arapaima,fish">
+      <img alt="Arapaima" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Arapaima_gigas_in_shedd_aquarium.jpg/640px-Arapaima_gigas_in_shedd_aquarium.jpg">
       <div>
         <h3>Arapaima</h3>
         <a href="https://wa.me/919360886437?text=Hello%20JP%20Pets!%20I%20would%20like%20to%20order%20Arapaima." target="_blank">ORDER</a>
@@ -213,8 +605,9 @@
       </div>
     </div>
 
+    <!-- 16. Koi Carp -->
     <div>
-      <img alt="Koi Carp" src="https://loremflickr.com/600/400/koi,carp,fish">
+      <img alt="Koi Carp" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Koi_feeding.jpg/640px-Koi_feeding.jpg">
       <div>
         <h3>Koi Carp</h3>
         <a href="https://wa.me/919360886437?text=Hello%20JP%20Pets!%20I%20would%20like%20to%20order%20Koi%20Carp." target="_blank">ORDER</a>
@@ -222,45 +615,44 @@
       </div>
     </div>
 
+    <!-- 17. Alligator Gar -->
     <div>
-      <img alt="Alligator Gar" src="https://loremflickr.com/600/400/alligator,gar,fish">
+      <img alt="Alligator Gar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Atractosteus_spatula_in_Georgia_Aquarium.jpg/640px-Atractosteus_spatula_in_Georgia_Aquarium.jpg">
       <div>
         <h3>Alligator Gar</h3>
         <a href="https://wa.me/919360886437?text=Hello%20JP%20Pets!%20I%20would%20like%20to%20order%20Alligator%20Gar." target="_blank">ORDER</a>
         <a href="https://wa.me/919360886437?text=Hello%20JP%20Pets!%20I%20would%20like%20to%20enquire%20about%20Alligator%20Gar." target="_blank">ENQUIRY</a>
       </div>
     </div>
-
   </div>
 </section>
 
-
 <section id="aquarium-accessories">
-  <p>AQUARIUM</p>
+  <p>AQUARIUM SETUP</p>
   <h2>Aquarium Accessories</h2>
   <p>Quality aquarium accessories for creating and maintaining a beautiful aquarium.</p>
 </section>
 
 <section id="dogs">
-  <p>PETS</p>
+  <p>PETS &amp; CARE</p>
   <h2>🐶 Dogs</h2>
   <p>Pet dogs and essentials available at JP Pets &amp; Aquarium.</p>
 </section>
 
 <section id="dog-accessories">
-  <p>PETS</p>
+  <p>PET CARE</p>
   <h2>Dog Accessories</h2>
   <p>Useful and stylish accessories for your beloved dogs.</p>
 </section>
 
 <section id="cats">
-  <p>PETS</p>
+  <p>PETS &amp; CARE</p>
   <h2>🐱 Cats</h2>
   <p>Cat products and pet essentials available at JP Pets &amp; Aquarium.</p>
 </section>
 
 <section id="cat-accessories">
-  <p>PETS</p>
+  <p>PET CARE</p>
   <h2>Cat Accessories</h2>
   <p>Comfortable and useful accessories for your cats.</p>
 </section>
@@ -272,48 +664,37 @@
 </section>
 
 <section id="aquarium-tanks">
-  <p>AQUARIUM</p>
+  <p>AQUARIUM TANKS</p>
   <h2>Aquarium Tanks</h2>
   <p>Explore aquarium tanks for different spaces and setups.</p>
 </section>
 
 <section id="aquarium-woods">
-  <p>AQUASCAPING</p>
+  <p>AQUASCAPING WOODS</p>
   <h2>🌳 Aquarium Woods</h2>
   <p>Natural aquarium woods for creating stunning aquascapes.</p>
 </section>
 
-
 <section>
-
-  <p>ABOUT US</p>
-
+  <p>ABOUT OUR STORE</p>
   <h2>JP Pets &amp; Aquarium</h2>
-
   <p>
     JP Pets &amp; Aquarium provides aquarium fishes, pets,
     aquarium accessories and pet essentials in Dindigul.
   </p>
-
 </section>
-
 
 <section>
-
   <p>GET IN TOUCH</p>
-
   <h2>Visit JP Pets &amp; Aquarium</h2>
-
-  <p>📍 VIP Nagar, Government ITI, Dindigul - 624003</p>
-
-  <p>📱 9360886437</p>
-
-  <a href="https://wa.me/919360886437?text=Hello%20JP%20Pets%20%26%20Aquarium!" target="_blank">
-    WhatsApp: 9360886437
-  </a>
-
+  <div class="contact-card-box">
+    <p style="font-size: 1.15rem; color: #1e293b; font-weight: 600; margin-bottom: 0.5rem;">📍 VIP Nagar, Government ITI, Dindigul - 624003</p>
+    <p style="font-size: 1.1rem; color: #0284c7; font-weight: 700; margin-bottom: 1.2rem;">📱 9360886437</p>
+    <a href="https://wa.me/919360886437?text=Hello%20JP%20Pets%20%26%20Aquarium!" target="_blank">
+      WhatsApp: 9360886437
+    </a>
+  </div>
 </section>
-
 
 <footer>
   <p>© 2026 JP Pets &amp; Aquarium • Dindigul</p>
