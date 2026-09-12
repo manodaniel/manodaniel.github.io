@@ -9,266 +9,265 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(0, 210, 255, 0.18), transparent 30%),
-    radial-gradient(circle at 80% 10%, rgba(0, 120, 255, 0.18), transparent 30%),
-    linear-gradient(180deg, #031b35, #052d4f 45%, #021321);
-  color: #ffffff;
-  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #031018;
+  color: #fff;
+  overflow-x: hidden;
 }
 
-/* HEADER */
-
-header {
+.site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding: 20px 15px;
+  background: rgba(2, 12, 20, 0.94);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 8px 35px rgba(0,0,0,0.35);
+}
+
+.brand {
   text-align: center;
-  background: rgba(2, 18, 35, 0.88);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(80, 220, 255, 0.25);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  padding: 20px 15px 15px;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
-header h1 {
-  font-size: 30px;
-  color: #ffffff;
-  text-shadow: 0 0 18px rgba(0, 220, 255, 0.8);
-  margin-bottom: 12px;
+.top-nav {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 0 15px 15px;
+  scrollbar-width: none;
 }
 
-nav {
-  margin-top: 8px;
+.top-nav::-webkit-scrollbar {
+  display: none;
 }
 
-nav a {
-  display: inline-block;
-  margin: 5px 7px;
-  padding: 8px 12px;
-  color: #dffaff;
+.top-nav a {
+  color: #d8f7ff;
   text-decoration: none;
-  font-weight: bold;
-  border-radius: 20px;
+  padding: 10px 15px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 30px;
+  background: rgba(255,255,255,0.04);
+  font-size: 13px;
+  font-weight: 600;
   transition: 0.3s;
 }
 
-nav a:hover {
-  background: rgba(0, 210, 255, 0.18);
-  color: #5eeeff;
+.top-nav a:hover {
+  background: rgba(0,210,255,0.18);
+  border-color: rgba(0,210,255,0.5);
+  color: #fff;
 }
+
 
 /* HERO */
 
 .hero {
+  min-height: 680px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   position: relative;
   overflow: hidden;
-  min-height: 480px;
-  padding: 110px 20px;
-  text-align: center;
 
   background:
-    linear-gradient(rgba(0, 20, 45, 0.55), rgba(0, 25, 50, 0.8)),
-    radial-gradient(circle at center, #087fa8, #032544 65%, #011221);
-}
-
-.hero::before,
-.hero::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid rgba(150, 240, 255, 0.2);
+    radial-gradient(circle at 20% 30%, rgba(0,210,255,0.28), transparent 28%),
+    radial-gradient(circle at 80% 65%, rgba(0,100,180,0.35), transparent 32%),
+    linear-gradient(135deg, #02131f 0%, #063d55 48%, #01131f 100%);
 }
 
 .hero::before {
-  width: 220px;
-  height: 220px;
-  left: -80px;
-  bottom: -80px;
-  box-shadow:
-    280px -180px 0 20px rgba(100, 220, 255, 0.06),
-    600px 60px 0 40px rgba(100, 220, 255, 0.05);
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 15% 80%, rgba(255,255,255,0.12) 0 3px, transparent 4px),
+    radial-gradient(circle at 35% 65%, rgba(255,255,255,0.10) 0 4px, transparent 5px),
+    radial-gradient(circle at 70% 30%, rgba(255,255,255,0.12) 0 3px, transparent 4px),
+    radial-gradient(circle at 85% 75%, rgba(255,255,255,0.09) 0 5px, transparent 6px);
+
+  opacity: 0.65;
 }
 
 .hero::after {
-  width: 120px;
-  height: 120px;
-  right: 8%;
-  top: 20%;
+  content: "";
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  border: 1px solid rgba(80,230,255,0.12);
   box-shadow:
-    -220px 200px 0 25px rgba(100, 220, 255, 0.05),
-    120px 240px 0 15px rgba(100, 220, 255, 0.05);
+    0 0 80px rgba(0,200,255,0.08),
+    inset 0 0 80px rgba(0,200,255,0.06);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  padding: 40px 20px;
+}
+
+.hero-small,
+.section-label {
+  color: #59dfff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
 }
 
 .hero h1 {
-  position: relative;
-  z-index: 2;
-  font-size: clamp(38px, 8vw, 68px);
-  margin-bottom: 18px;
-  color: #ffffff;
-  text-shadow:
-    0 0 10px #00d9ff,
-    0 0 35px rgba(0, 217, 255, 0.7);
+  font-size: clamp(44px, 9vw, 82px);
+  line-height: 1.02;
+  font-weight: 800;
+  letter-spacing: -2px;
+  text-shadow: 0 0 35px rgba(0,220,255,0.35);
 }
 
-.hero p {
-  position: relative;
-  z-index: 2;
-  font-size: 20px;
-  margin-bottom: 30px;
-  color: #d8faff;
+.hero-text {
+  max-width: 600px;
+  margin: 25px auto 35px;
+  color: #c7eaf3;
+  font-size: 18px;
+  line-height: 1.7;
 }
 
-/* BUTTON */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
 
 .button {
-  position: relative;
-  z-index: 3;
   display: inline-block;
-  padding: 14px 28px;
-  background: linear-gradient(135deg, #00d084, #00a968);
-  color: #ffffff;
   text-decoration: none;
+  padding: 15px 25px;
   border-radius: 30px;
-  font-weight: bold;
-  box-shadow: 0 8px 25px rgba(0, 210, 130, 0.3);
+  font-weight: 700;
   transition: 0.3s;
+}
+
+.primary {
+  background: linear-gradient(135deg, #00d084, #008f68);
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(0,208,132,0.25);
+}
+
+.secondary {
+  background: rgba(255,255,255,0.07);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
 }
 
 .button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(0, 230, 150, 0.5);
 }
 
-/* SECTIONS */
 
-section {
-  padding: 70px 20px;
+/* WELCOME */
+
+.welcome-section {
   text-align: center;
-}
-
-section h2 {
-  font-size: clamp(28px, 5vw, 42px);
-  margin-bottom: 15px;
-  color: #ffffff;
-  text-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
-}
-
-section > p {
-  color: #bdefff;
-  font-size: 17px;
-  margin-bottom: 20px;
-}
-
-/* AQUARIUM SECTION */
-
-#aquarium {
+  padding: 100px 20px;
   background:
-    linear-gradient(
-      rgba(2, 30, 55, 0.92),
-      rgba(3, 45, 75, 0.92)
-    );
-  border-top: 1px solid rgba(70, 220, 255, 0.15);
-  border-bottom: 1px solid rgba(70, 220, 255, 0.15);
+    radial-gradient(circle at center, rgba(0,200,255,0.12), transparent 45%),
+    #041720;
 }
+
+.welcome-section h2,
+.category-section h2,
+.about-section h2,
+.contact-section h2 {
+  font-size: clamp(32px, 6vw, 55px);
+  line-height: 1.1;
+  margin-bottom: 22px;
+}
+
+.welcome-section > p:last-child {
+  max-width: 650px;
+  margin: auto;
+  color: #a9d5df;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
 
 /* FISH SECTION */
 
-#live-fishes {
-  position: relative;
+.category-section {
+  padding: 95px 20px;
+  text-align: center;
   background:
-    radial-gradient(circle at 50% 0%, rgba(0, 210, 255, 0.12), transparent 45%),
-    linear-gradient(180deg, #042b49, #021a2e);
+    radial-gradient(circle at 50% 0%, rgba(0,220,255,0.14), transparent 40%),
+    linear-gradient(180deg, #03202d, #02131d);
 }
 
-#live-fishes h2 {
-  margin-bottom: 35px;
+.category-description {
+  color: #a9d5df;
+  margin-bottom: 45px;
 }
-
-/* FISH GRID */
 
 .fish-grid {
-  display: grid !important;
+  max-width: 1150px;
+  margin: auto;
+  display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 25px;
-  max-width: 1100px;
-  margin: auto;
 }
-
-/* FISH CARD */
 
 .fish-card {
   position: relative;
   overflow: hidden;
-  padding: 12px;
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.12),
-      rgba(255, 255, 255, 0.035)
-    );
-  border: 1px solid rgba(100, 225, 255, 0.25);
-  border-radius: 20px;
-  box-shadow:
-    0 12px 35px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(12px);
-  transition: transform 0.35s, box-shadow 0.35s, border 0.35s;
-}
-
-.fish-card::before {
-  content: "";
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  right: -45px;
-  top: -45px;
-  border-radius: 50%;
-  background: rgba(0, 220, 255, 0.12);
-  filter: blur(5px);
+  border-radius: 24px;
+  background: rgba(255,255,255,0.055);
+  border: 1px solid rgba(130,230,255,0.16);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+  backdrop-filter: blur(15px);
+  transition: 0.35s;
 }
 
 .fish-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(70, 230, 255, 0.7);
+  border-color: rgba(70,225,255,0.55);
   box-shadow:
-    0 18px 45px rgba(0, 0, 0, 0.45),
-    0 0 25px rgba(0, 210, 255, 0.15);
+    0 25px 60px rgba(0,0,0,0.45),
+    0 0 30px rgba(0,210,255,0.12);
 }
 
 .fish-card img {
-  display: block;
   width: 100%;
-  height: 220px;
+  height: 270px;
+  display: block;
   object-fit: cover;
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  transition: transform 0.4s;
 }
 
-.fish-card:hover img {
-  transform: scale(1.03);
+.fish-info {
+  padding: 20px;
 }
 
-.fish-card h3 {
-  position: relative;
-  margin: 17px 0 13px;
-  font-size: 23px;
-  color: #ffffff;
+.fish-info h3 {
+  font-size: 25px;
+  margin-bottom: 14px;
 }
-
-/* FISH BUTTONS */
 
 .fish-card a {
   display: inline-block;
-  padding: 10px 15px;
-  margin: 4px 2px;
-  border-radius: 25px;
   text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 13px;
+  color: #fff;
+  padding: 10px 17px;
+  margin: 3px;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: 700;
   transition: 0.3s;
 }
 
@@ -277,79 +276,138 @@ section > p {
 }
 
 .order {
-  background: linear-gradient(135deg, #00d084, #009e68);
-  box-shadow: 0 5px 15px rgba(0, 210, 130, 0.2);
+  background: linear-gradient(135deg, #00d084, #008f68);
 }
 
 .enquiry {
-  background: linear-gradient(135deg, #00a8c9, #007b9c);
-  box-shadow: 0 5px 15px rgba(0, 190, 230, 0.2);
+  background: linear-gradient(135deg, #008fc4, #006782);
 }
 
-/* DOGS / CATS / ABOUT */
 
-#dogs,
-#cats,
-#about {
-  background: rgba(1, 20, 36, 0.75);
-  border-top: 1px solid rgba(100, 220, 255, 0.1);
+/* OTHER CATEGORIES */
+
+.simple-category {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+
+  background:
+    radial-gradient(circle at center, rgba(0,190,230,0.12), transparent 45%),
+    #03151f;
+
+  border-top: 1px solid rgba(255,255,255,0.05);
 }
+
+.simple-category p:last-child {
+  max-width: 600px;
+  color: #a9d5df;
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+
+/* ABOUT */
+
+.about-section {
+  padding: 100px 20px;
+  text-align: center;
+  background: #021019;
+}
+
+.about-section > p:last-child {
+  max-width: 650px;
+  margin: auto;
+  color: #a9d5df;
+  line-height: 1.8;
+  font-size: 17px;
+}
+
 
 /* CONTACT */
 
-#contact {
+.contact-section {
+  padding: 100px 20px;
+  text-align: center;
   background:
-    radial-gradient(circle at center, rgba(0, 170, 220, 0.15), transparent 55%),
-    #011525;
+    radial-gradient(circle at center, rgba(0,210,255,0.16), transparent 50%),
+    #031b27;
 }
 
-#contact p {
-  margin-bottom: 10px;
+.contact-section p {
+  color: #c4e7ee;
+  margin-bottom: 12px;
 }
+
+.contact-section .phone {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
 
 /* FOOTER */
 
 footer {
-  padding: 25px 15px;
+  padding: 30px 15px;
   text-align: center;
-  background: #010d18;
-  color: #82bdd0;
-  border-top: 1px solid rgba(100, 220, 255, 0.15);
+  background: #01090e;
+  color: #7098a3;
+  font-size: 13px;
 }
+
 
 /* MOBILE */
 
 @media (max-width: 700px) {
 
-  header h1 {
-    font-size: 25px;
+  .brand {
+    font-size: 21px;
+    padding: 16px 10px 12px;
   }
 
-  nav a {
-    margin: 3px;
-    padding: 7px 9px;
-    font-size: 13px;
+  .top-nav {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .top-nav a {
+    font-size: 12px;
+    padding: 9px 12px;
   }
 
   .hero {
-    min-height: 430px;
-    padding: 90px 18px;
+    min-height: 600px;
   }
 
-  .hero p {
-    font-size: 17px;
+  .hero h1 {
+    font-size: 47px;
   }
 
-  section {
-    padding: 55px 15px;
+  .hero-text {
+    font-size: 16px;
+  }
+
+  .welcome-section,
+  .category-section,
+  .about-section,
+  .contact-section {
+    padding: 75px 15px;
   }
 
   .fish-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 
   .fish-card img {
-    height: 220px;
+    height: 240px;
+  }
+
+  .simple-category {
+    min-height: 330px;
+    padding: 70px 20px;
   }
 }
