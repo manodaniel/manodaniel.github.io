@@ -948,6 +948,99 @@
 <footer>
   <p>© 2026 JP Pets &amp; Aquarium • Dindigul</p>
 </footer>
+<script>
+const searchInput = document.getElementById("productSearch");
+const searchResults = document.getElementById("searchResults");
 
+const productCards = Array.from(
+  document.querySelectorAll(
+    "#live-fishes > div > div, #aquarium-accessories > div > div"
+  )
+);
+
+function searchProducts() {
+  const query = searchInput.value.trim().toLowerCase();
+
+  searchResults.innerHTML = "";
+
+  if (!query) {
+    searchResults.style.display = "none";
+    return;
+  }
+
+  const matches = productCards.filter(card => {
+    const name = card.querySelector("h3")?.textContent || "";
+    return name.toLowerCase().includes(query);
+  });
+
+  if (matches.length === 0) {
+    searchResults.innerHTML =
+      '<div class="no-results">No products found.</div>';
+    searchResults.style.display = "block";
+    return;
+  }
+
+  matches.slice(0, 8).forEach(card => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = card.querySelector("h3")?.textContent || "Product";
+
+    button.addEventListener("click", () => {
+      searchResults.style.display = "none";
+
+      document.querySelectorAll(".product-highlight").forEach(item => {
+        item.classList.remove("product-highlight");
+      });
+
+      card.classList.add("product-highlight");
+
+      card.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+      setTimeout(() => {
+        card.classList.remove("product-highlight");
+      }, 2500);
+    });
+
+    searchResults.appendChild(button);
+  });
+
+  searchResults.style.display = "block";
+}
+
+searchInput.addEventListener("input", searchProducts);
+
+searchInput.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    const firstResult = productCards.find(card => {
+      const name = card.querySelector("h3")?.textContent || "";
+      return name.toLowerCase().includes(searchInput.value.trim().toLowerCase());
+    });
+
+    if (firstResult) {
+      searchResults.style.display = "none";
+
+      firstResult.classList.add("product-highlight");
+
+      firstResult.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+      setTimeout(() => {
+        firstResult.classList.remove("product-highlight");
+      }, 2500);
+    }
+  }
+});
+
+document.addEventListener("click", function(event) {
+  if (!event.target.closest(".site-search")) {
+    searchResults.style.display = "none";
+  }
+});
+</script>
 </body>
 </html>
