@@ -479,9 +479,186 @@
 
 
 }
+/* =========================
+   CATEGORIES MENU
+========================= */
+
+.menu-button {
+  position: fixed;
+  top: 82px;
+  left: 15px;
+  z-index: 2001;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--dark-navy);
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+.menu-button:hover {
+  background: var(--primary-ocean);
+}
+
+.category-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1998;
+}
+
+.category-menu {
+  position: fixed;
+  top: 0;
+  left: -310px;
+  width: 290px;
+  height: 100vh;
+  background: #fff;
+  z-index: 2000;
+  box-shadow: 8px 0 30px rgba(0,0,0,0.18);
+  transition: left 0.3s ease;
+  overflow-y: auto;
+}
+
+.category-menu.active {
+  left: 0;
+}
+
+.category-overlay.active {
+  display: block;
+}
+
+.category-menu-header {
+  background: linear-gradient(
+    135deg,
+    var(--dark-navy),
+    var(--primary-ocean)
+  );
+  color: #fff;
+  padding: 1.5rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-menu-header h3 {
+  margin: 0;
+  color: #fff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.15rem;
+}
+
+.category-close {
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.category-list {
+  padding: 0.8rem 0;
+}
+
+.category-list a {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 1.2rem;
+  color: #334155;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-bottom: 1px solid #eef2f6;
+  transition: all 0.2s ease;
+}
+
+.category-list a:hover {
+  background: #e0f2fe;
+  color: var(--primary-ocean);
+  padding-left: 1.5rem;
+}
+
+.category-list .category-icon {
+  width: 28px;
+  text-align: center;
+  font-size: 1.15rem;
+}
+
+/* Hide old horizontal category navigation */
+header nav {
+  display: none;
+}
+
+/* Give room for menu button */
+.nav-container {
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .menu-button {
+    top: 70px;
+    left: 12px;
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+  }
+
+  .category-menu {
+    width: 280px;
+  }
+
+  .nav-container {
+    padding-left: 4.5rem;
+  }
+}
   </style>
 </head>
 <body>
+<!-- CATEGORY MENU BUTTON -->
+<button class="menu-button" id="menuButton" aria-label="Open Categories">
+  ☰
+</button>
+
+<!-- CATEGORY MENU OVERLAY -->
+<div class="category-overlay" id="categoryOverlay"></div>
+
+<!-- CATEGORY SIDE MENU -->
+<div class="category-menu" id="categoryMenu">
+
+  <div class="category-menu-header">
+    <h3>Categories</h3>
+    <button class="category-close" id="categoryClose">×</button>
+  </div>
+
+  <div class="category-list">
+
+    <a href="#home">🏠 Home</a>
+
+    <a href="#live-fishes">🐠 Live Aquarium Fishes</a>
+
+    <a href="#aquarium-accessories">🐟 Aquarium Accessories</a>
+
+    <a href="#dogs">🐶 Dogs</a>
+
+    <a href="#dog-accessories">🦴 Dog Accessories</a>
+
+    <a href="#cats">🐱 Cats</a>
+
+    <a href="#cat-accessories">🐾 Cat Accessories</a>
+
+    <a href="#aquarium-plants">🌿 Aquarium Plants</a>
+
+    <a href="#aquarium-tanks">🪟 Aquarium Tanks</a>
+
+    <a href="#aquarium-woods">🌳 Aquarium Woods</a>
+
+  </div>
+</div>
 
 <div class="top-header"></div>
 
@@ -1040,6 +1217,19 @@ document.addEventListener("click", function(event) {
     searchResults.style.display = "none";
   }
 });
+<script>
+
+  // ஏற்கனவே இருந்த உங்க JavaScript code
+
+
+  /* =========================
+     CATEGORY MENU
+  ========================= */
+
+  const menuButton = document.getElementById("menuButton");
+  // ...மேலே கொடுத்த code...
+
+</script>
 </script>
 </body>
 </html>
