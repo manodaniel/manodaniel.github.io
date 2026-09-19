@@ -1,0 +1,42 @@
+backend:
+  name: github
+  repo: manodaniel/manodaniel.github.io
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+site_url: https://manodaniel.github.io/
+
+collections:
+  - name: "products"
+    label: "Products"
+    folder: "products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Product Name"
+        name: "title"
+        widget: "string"
+
+      - label: "Product Image"
+        name: "image"
+        widget: "image"
+
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - "Live Aquarium Fishes"
+          - "Aquarium Accessories"
+          - "Dogs"
+          - "Dog Accessories"
+          - "Cats"
+          - "Cat Accessories"
+          - "Aquarium Plants"
+          - "Aquarium Tanks"
+          - "Aquarium Woods"
+
+      - label: "Description"
+        name: "description"
+        widget: "text"
