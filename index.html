@@ -1159,7 +1159,8 @@ function searchProducts() {
   matches.slice(0, 8).forEach(card => {
     const button = document.createElement("button");
     button.type = "button";
-    button.textContent = card.querySelector("h3")?.textContent || "Product";
+    button.textContent =
+      card.querySelector("h3")?.textContent || "Product";
 
     button.addEventListener("click", () => {
       searchResults.style.display = "none";
@@ -1192,7 +1193,9 @@ searchInput.addEventListener("keydown", function(event) {
   if (event.key === "Enter") {
     const firstResult = productCards.find(card => {
       const name = card.querySelector("h3")?.textContent || "";
-      return name.toLowerCase().includes(searchInput.value.trim().toLowerCase());
+      return name
+        .toLowerCase()
+        .includes(searchInput.value.trim().toLowerCase());
     });
 
     if (firstResult) {
@@ -1217,19 +1220,41 @@ document.addEventListener("click", function(event) {
     searchResults.style.display = "none";
   }
 });
-<script>
-
-  // ஏற்கனவே இருந்த உங்க JavaScript code
 
 
-  /* =========================
-     CATEGORY MENU
-  ========================= */
+/* =========================
+   CATEGORY MENU
+========================= */
 
-  const menuButton = document.getElementById("menuButton");
-  // ...மேலே கொடுத்த code...
+const menuButton = document.getElementById("menuButton");
+const categoryMenu = document.getElementById("categoryMenu");
+const categoryOverlay = document.getElementById("categoryOverlay");
+const categoryClose = document.getElementById("categoryClose");
 
-</script>
+function openCategoryMenu() {
+  categoryMenu.classList.add("active");
+  categoryOverlay.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeCategoryMenu() {
+  categoryMenu.classList.remove("active");
+  categoryOverlay.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+menuButton.addEventListener("click", openCategoryMenu);
+
+categoryClose.addEventListener("click", closeCategoryMenu);
+
+categoryOverlay.addEventListener("click", closeCategoryMenu);
+
+document.querySelectorAll(".category-list a").forEach(link => {
+  link.addEventListener("click", function() {
+    closeCategoryMenu();
+  });
+});
+
 </script>
 </body>
 </html>
