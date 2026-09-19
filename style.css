@@ -445,6 +445,9 @@ footer {
 .menu-button {
   top: 60px;
 }
+.menu-button {
+  left: 5px;
+}
 
   .top-nav {
     padding-left: 10px;
